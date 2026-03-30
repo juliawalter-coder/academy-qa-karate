@@ -3,9 +3,11 @@ Feature: Level 3 - Requests POST /posts and /comments - validate statusCode 201
   Background: My preconditions
       * url apiUrl
 
-  Scenario: POST /posts  - validate statusCode 201, id and title
+  Scenario: 004USER - POST /posts  - validate statusCode 201, id and title
     Given path 'posts'
-    And request { title: 'My Post', body: 'Content', userId: 28 }
+    * def jsonBody = read('../../../test-data/JSONPlaceholder/user/dataUser004.json')
+    And request jsonBody
+    #   And resquest { title: My Post, body: Content, userId: 28 }
     When method POST
     Then status 201
     And match response.id == '#number? _ > 0'
@@ -16,7 +18,10 @@ Feature: Level 3 - Requests POST /posts and /comments - validate statusCode 201
     #   And match response == '#array'
     #   And match response == '#[_>= 10]'
 
-  Scenario: POST /comments  - validate statusCode 201, emails format and postID content
+    #   Examples:
+    #       | read('academy-qa-karate/src/test/resources/test-data/JSONPlaceholder/user/dataUser004.json') |
+
+  Scenario: 005USER - POST /comments  - validate statusCode 201, emails format and postID content
     #   * def isValidEmail = function(email) { return email.includes('@') && email.includes('.') }
     Given path 'comments'
     And request { email: 'teste@test.com', postID: '5'}
