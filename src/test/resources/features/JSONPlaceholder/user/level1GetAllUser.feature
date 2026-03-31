@@ -10,5 +10,3 @@ Feature: Level 1 - Basic requests GET /users - validate statusCode 200
     Then status 200
     And match response == '#array'
     And match response == '#[_>= 10]'
-
-   #  And response.items.lenght >= 10
