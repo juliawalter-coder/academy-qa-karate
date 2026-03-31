@@ -20,7 +20,21 @@ public class TestRunner {
      */
     @Karate.Test
     public Karate testRunner() {
-        Feature featureClassPath = Feature.read("classpath:features/example.feature");
-        return Karate.run().features(featureClassPath);
+           return Karate.run("classpath:/features/JSONPlaceholder/user").relativeTo(getClass());
     }
 }
+
+class TestOnlyRegression {
+    @Karate.Test
+    public Karate testOnlyRegression() {
+        return Karate.run("classpath:/features/JSONPlaceholder/user").tags("@regression").relativeTo(getClass());
+    }
+}
+
+class TestOnlySmock {
+    @Karate.Test
+    public Karate testOnlySmoke() {
+        return Karate.run("classpath:/features/JSONPlaceholder/user").tags("@smoke").relativeTo(getClass());
+    }
+}
+

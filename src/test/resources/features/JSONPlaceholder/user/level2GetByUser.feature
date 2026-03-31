@@ -3,6 +3,7 @@ Feature: Level 2 - Basic requests GET /users by id - validate statusCode 200
   Background: My preconditions
       * url apiUrl
 
+  @regression
   Scenario Outline: 002USER/003USER - GET by userId = 1/10 /posts?userId=<id> - validate statusCode 200, id and title
     * def userId = '<id>'
     Given path 'users', userId
