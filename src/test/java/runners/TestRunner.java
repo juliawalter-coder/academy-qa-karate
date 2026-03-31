@@ -20,21 +20,26 @@ public class TestRunner {
      */
     @Karate.Test
     public Karate testRunner() {
-           return Karate.run("classpath:/features/JSONPlaceholder/user").relativeTo(getClass());
+           return Karate.run("classpath:/features/JSONPlaceholder/user")
+                   .relativeTo(getClass());
     }
 }
 
 class TestOnlyRegression {
     @Karate.Test
     public Karate testOnlyRegression() {
-        return Karate.run("classpath:/features/JSONPlaceholder/user").tags("@regression").relativeTo(getClass());
+        return Karate.run("classpath:/features/JSONPlaceholder/user")
+                .tags("@regression")
+                .relativeTo(getClass());
     }
 }
 
 class TestOnlySmock {
     @Karate.Test
     public Karate testOnlySmoke() {
-        return Karate.run("classpath:/features/JSONPlaceholder/user").tags("@smoke").relativeTo(getClass());
+        return Karate.run("classpath:/features/JSONPlaceholder/user")
+                .tags("@smoke")
+                .relativeTo(getClass());
     }
 }
 
