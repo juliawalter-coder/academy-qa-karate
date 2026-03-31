@@ -14,7 +14,6 @@ Feature: Level 4 - Requests PUT and DELETE /posts/{id} and /comments - validate 
 
   @regression
   Scenario: 007USER - DELETE all /users  - validate statusCode 200 and response content
-
     Given path 'posts', 28
     When method DELETE
     Then status 200
