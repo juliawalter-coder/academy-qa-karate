@@ -16,10 +16,11 @@ function fn() {
     let env = karate.env || 'int';
     karate.log('karate.env system property was:', env);
 
-
-    /** Environment-specific configuration */
     const config = {
+//        env: env,
         apiUrl: "https://jsonplaceholder.typicode.com/"
+//        pre: {apiUrl: "https://jsonplaceholder.typicode.com/"},
+//        pro: {apiUrl: "https://jsonplaceholder.typicode.com/"}
     };
 
    /** if (env === 'int') {
