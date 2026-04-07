@@ -13,18 +13,23 @@ function fn() {
     const TIMEOUT = 5000;
 
     /** Environment-specific configuration */
-    var env = karate.env || 'int';
+    let env = karate.env || 'int';
     karate.log('karate.env system property was:', env);
 
-    var config = { env: env };
 
-    if (env === 'int') {
+    /** Environment-specific configuration */
+    const config = {
+        apiUrl: "https://jsonplaceholder.typicode.com/"
+    };
+
+   /** if (env === 'int') {
         config.apiUrl = "https://jsonplaceholder.typicode.com/";
     } else if (env === 'pre') {
         config.apiUrl = "https://jsonplaceholder.typicode.com/";
     } else if (env ==='prod') {
         config.apiUrl = "https://jsonplaceholder.typicode.com/";
     }
+    */
 
     // Configure Karate HTTP timeouts
     karate.configure('connectTimeout', TIMEOUT);
