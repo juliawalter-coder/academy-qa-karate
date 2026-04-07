@@ -17,20 +17,18 @@ function fn() {
     karate.log('karate.env system property was:', env);
 
     const config = {
-//        env: env,
-        apiUrl: "https://jsonplaceholder.typicode.com/"
+          apiUrl: "https://jsonplaceholder.typicode.com/"
 //        pre: {apiUrl: "https://jsonplaceholder.typicode.com/"},
 //        pro: {apiUrl: "https://jsonplaceholder.typicode.com/"}
     };
 
-   /** if (env === 'int') {
+   if (env === 'int') {
         config.apiUrl = "https://jsonplaceholder.typicode.com/";
     } else if (env === 'pre') {
         config.apiUrl = "https://jsonplaceholder.typicode.com/";
     } else if (env ==='prod') {
         config.apiUrl = "https://jsonplaceholder.typicode.com/";
     }
-    */
 
     // Configure Karate HTTP timeouts
     karate.configure('connectTimeout', TIMEOUT);
