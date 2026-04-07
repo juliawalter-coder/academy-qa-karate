@@ -2,7 +2,7 @@ Feature: Level 4 - Requests PUT and DELETE /posts/{id} and /comments - validate 
 
   Background: My preconditions
       * url apiUrl
-      * call read('level3PostUser.feature')
+      * call read('../../../helpers/JSONPlaceholder/user/user007Helper.feature')
       * def jsonBodyUser006 = read('../../../test-data/JSONPlaceholder/user/dataUser006.json')
 
   @regression
