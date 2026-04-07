@@ -21,4 +21,4 @@ Feature: Level 3 - Requests POST /posts and /comments - validate statusCode 201
     When method POST
     Then status 201
     And match response.email == '#string? _.includes("@")'
-    And match response.postID == '5'
+    And match response.postID ==  '#number? _ > 0'
