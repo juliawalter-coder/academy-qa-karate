@@ -20,7 +20,7 @@ public class TestRunner {
      */
     @Karate.Test
     public Karate testRunner() {
-           return Karate.run("classpath:/features/JSONPlaceholder/user")
+           return Karate.run("classpath:/features")
                    .relativeTo(getClass());
     }
 }
@@ -28,7 +28,7 @@ public class TestRunner {
 class TestOnlyRegression {
     @Karate.Test
     public Karate testOnlyRegression() {
-        return Karate.run("classpath:/features/JSONPlaceholder/user")
+        return Karate.run("classpath:/features")
                 .tags("@regression")
                 .relativeTo(getClass());
     }
@@ -37,7 +37,7 @@ class TestOnlyRegression {
 class TestOnlySmock {
     @Karate.Test
     public Karate testOnlySmoke() {
-        return Karate.run("classpath:/features/JSONPlaceholder/user")
+        return Karate.run("classpath:/features")
                 .tags("@smoke")
                 .relativeTo(getClass());
     }
